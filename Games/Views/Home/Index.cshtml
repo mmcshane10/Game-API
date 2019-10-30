@@ -1,0 +1,21 @@
+﻿@using System.Collections.Generic
+@using Games.Models
+@model List<Game>
+
+<h1>All Games:</h1>
+
+<ol>
+@foreach (Game game in Model)
+{
+    <ul>
+        <li>Name: @game.Name</li>
+        <li>Type: @game.Type</li>
+        <li>Publisher: @game.Publisher</li>
+        <li>Max Players: @game.MaxPlayers</li>
+        <li>Min Players: @game.MinPlayers</li>
+        <li>MinAge: @game.MinAge</li>
+        <li>Play Time: @game.AvgPlayTime</li>
+    </ul>
+    <br>
+}
+</ol>
