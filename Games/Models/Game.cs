@@ -23,12 +23,13 @@ namespace Games.Models
             var result = apiCallTask.Result;
             
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-            List<Game> gameList = new List<Game>();
-            foreach (JObject Jgame in jsonResponse)
-            {
-                Game game = JsonConvert.DeserializeObject<Game>(Jgame.ToString());
-                gameList.Add(game);
-            } 
+            List<Game> gameList = JsonConvert.DeserializeObject< List<Game>>(result);
+            // List<Game> gameList = new List<Game>();
+            // foreach (JObject Jgame in jsonResponse)
+            // {
+            //     Game game = JsonConvert.DeserializeObject<Game>(Jgame.ToString());
+            //     gameList.Add(game);
+            // } 
             return gameList;
         }
     }
